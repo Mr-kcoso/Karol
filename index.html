@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigada, Karol! 💛</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fundo com circuitos em amarelo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(255, 192, 0, 0.08) 1px, transparent 1px),
+                linear-gradient(rgba(255, 192, 0, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 20% 50%, rgba(255, 192, 0, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255, 192, 0, 0.05) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 200px 200px, 200px 200px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Animação de fundo com elementos tecnológicos flutuantes */
+        .background-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-bit {
+            position: absolute;
+            color: #ffc000;
+            font-size: 24px;
+            animation: blink-bit 1.5s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        .floating-bit:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-bit:nth-child(2) {
+            top: 25%;
+            right: 12%;
+            animation-delay: 0.5s;
+        }
+
+        .floating-bit:nth-child(3) {
+            bottom: 25%;
+            left: 12%;
+            animation-delay: 1s;
+        }
+
+        .floating-bit:nth-child(4) {
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 0.3s;
+        }
+
+        .floating-bit:nth-child(5) {
+            top: 50%;
+            left: 5%;
+            animation-delay: 0.7s;
+        }
+
+        .floating-bit:nth-child(6) {
+            top: 40%;
+            right: 5%;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes blink-bit {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Container principal */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Header com animação */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .tech-icon {
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .tech-icon svg {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(0 4px 12px rgba(255, 200, 0, 0.4));
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Card principal com mensagem */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(255, 200, 0, 0.15);
+            border: 2px solid #fff9e6;
+            text-align: center;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 192, 0, 0.1) 50%, transparent 100%);
+            animation: shine 3s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% {
+                top: -100%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 50px rgba(255, 200, 0, 0.25);
+            border-color: #ffd700;
+            transform: translateY(-5px);
+        }
+
+        .message-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffc000, #ffb000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-shadow: none;
+        }
+
+        /* Conteúdo central com terminal */
+        .central-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .terminal-message {
+            font-size: 22px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 20px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        }
+
+        /* Ícones piscantes */
+        .icon-blink {
+            display: inline-block;
+            margin: 0 8px;
+            animation: blink-icon 0.8s ease-in-out infinite;
+            font-size: 24px;
+        }
+
+        .icon-blink:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .icon-blink:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .icon-blink:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes blink-icon {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
+
+        /* Tags HTML estilizadas */
+        .html-tags {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .html-tag {
+            background: linear-gradient(135deg, #fff9e6, #fffbf0);
+            border: 2px solid #ffc000;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-family: 'Courier New', monospace;
+            color: #ffc000;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 200, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .html-tag::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 192, 0, 0.2);
+            animation: slide-tag 2s infinite;
+        }
+
+        @keyframes slide-tag {
+            0% {
+                top: -100%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+
+        .html-tag:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 192, 0, 0.3);
+            background: linear-gradient(135deg, #ffc000, #ffb000);
+            color: white;
+        }
+
+        /* Efeito de digitação */
+        .typing-effect {
+            border-right: 3px solid #ffc000;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                border-right: 3px solid #ffc000;
+            }
+            50%, 100% {
+                border-right: 3px solid transparent;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #fff9e6;
+            padding-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            font-size: 28px;
+            color: #ffc000;
+            margin: 0;
+        }
+
+        .close-btn {
+            font-size: 30px;
+            color: #ffc000;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Mensagens criativas */
+        .creative-messages {
+            margin-bottom: 40px;
+        }
+
+        .creative-message {
+            background: linear-gradient(135deg, #fffbf0 0%, #fff9e6 100%);
+            border-left: 4px solid #ffc000;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .creative-message::before {
+            content: '💻';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            opacity: 0.3;
+        }
+
+        .creative-message:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 18px rgba(255, 192, 0, 0.2);
+            background: linear-gradient(135deg, #ffc000, #ffb000);
+            color: white;
+            border-left-color: white;
+        }
+
+        .creative-message:hover::before {
+            opacity: 1;
+            animation: bounce-icon 0.6s ease;
+        }
+
+        @keyframes bounce-icon {
+            0%, 100% {
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateY(-70%) scale(1.2);
+            }
+        }
+
+        /* Terminal VS Code estilizado */
+        .terminal {
+            background: #1e1e1e;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 30px;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(255, 192, 0, 0.15);
+            border: 2px solid #ffc000;
+            overflow-x: auto;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+            margin-right: 12px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red {
+            background: #ff5f56;
+        }
+
+        .terminal-dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .terminal-dot.green {
+            background: #27c93f;
+        }
+
+        .terminal-title {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .terminal-line {
+            margin: 8px 0;
+            animation: typeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .terminal-line:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .terminal-line:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .terminal-line:nth-child(3) {
+            animation-delay: 1.3s;
+        }
+
+        .terminal-line:nth-child(4) {
+            animation-delay: 1.8s;
+        }
+
+        .terminal-line:nth-child(5) {
+            animation-delay: 2.3s;
+        }
+
+        @keyframes typeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .terminal-prompt {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .terminal-text {
+            color: #00ff00;
+        }
+
+        .terminal-text.heart {
+            color: #ffc000;
+            animation: pulse-text 0.8s ease infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* Botões */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffc000 0%, #ffb000 100%);
+            color: #333;
+            box-shadow: 0 6px 20px rgba(255, 192, 0, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255, 192, 0, 0.45);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #ffc000;
+            border: 2px solid #ffc000;
+            box-shadow: 0 4px 15px rgba(255, 192, 0, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: #fffbf0;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(255, 192, 0, 0.35);
+        }
+
+        /* Mensagem de celebração */
+        .celebration-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ffc000, #ffb000);
+            color: white;
+            padding: 40px 60px;
+            border-radius: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 192, 0, 0.4);
+            z-index: 2500;
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .celebration-message.show {
+            display: block;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #999;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart-animation {
+            display: inline-block;
+            color: #ffc000;
+            animation: bounce 0.7s ease infinite;
+            margin: 0 5px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .message-title {
+                font-size: 24px;
+            }
+
+            .terminal-message {
+                font-size: 18px;
+                min-height: 60px;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .html-tags {
+                gap: 10px;
+            }
+
+            .html-tag {
+                font-size: 12px;
+                padding: 10px 16px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .icon-blink {
+                font-size: 20px;
+            }
+
+            .modal-content {
+                padding: 25px;
+            }
+
+            .terminal {
+                font-size: 12px;
+            }
+
+            .celebration-message {
+                padding: 30px 40px;
+                font-size: 22px;
+            }
+        }
+
+        /* Scroll customizado */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #ffc000;
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #ffb000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos flutuantes de fundo (bits de gratidão) -->
+    <div class="background-elements">
+        <div class="floating-bit">💻</div>
+        <div class="floating-bit">⚙️</div>
+        <div class="floating-bit">🖥️</div>
+        <div class="floating-bit">💡</div>
+        <div class="floating-bit">🔧</div>
+        <div class="floating-bit">✨</div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="tech-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Círculo amarelo principal -->
+                    <circle cx="50" cy="50" r="45" fill="#ffc000"/>
+                    
+                    <!-- Tela do computador -->
+                    <rect x="25" y="30" width="50" height="35" rx="3" fill="white" stroke="#333" stroke-width="2"/>
+                    <rect x="28" y="33" width="44" height="26" fill="#333"/>
+                    
+                    <!-- Pé do monitor -->
+                    <rect x="45" y="65" width="10" height="15" fill="#333"/>
+                    <rect x="35" y="80" width="30" height="3" rx="1.5" fill="#333"/>
+                    
+                    <!-- Linha de código -->
+                    <line x1="32" y1="40" x2="68" y2="40" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                    <line x1="32" y1="46" x2="65" y2="46" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                    <line x1="32" y1="52" x2="60" y2="52" stroke="white" stroke-width="1.5" opacity="0.7"/>
+                </svg>
+            </div>
+            <h1>Obrigada, Karol! 💛</h1>
+            <p class="subtitle">Uma mensagem especial da turma 3º DS</p>
+        </div>
+
+        <!-- Card Principal -->
+        <div class="card">
+            <div class="central-content">
+                <h2 class="message-title">✨ Nossa Mentora Especial ✨</h2>
+                
+                <!-- Mensagem principal com efeito de digitação -->
+                <div class="terminal-message">
+                    <span id="mainText"></span><span class="typing-effect"></span>
+                </div>
+
+                <!-- Ícones piscantes -->
+                <div style="margin: 20px 0; font-size: 28px;">
+                    <span class="icon-blink">💻</span>
+                    <span class="icon-blink">⚙️</span>
+                    <span class="icon-blink">🖥️</span>
+                </div>
+
+                <!-- Tags HTML estilizadas -->
+                <div class="html-tags">
+                    <div class="html-tag">&lt;gratidão infinita&gt;</div>
+                    <div class="html-tag">&lt;saudades eternas&gt;</div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="openModal()">
+                    💝 Ver mais agradecimentos
+                </button>
+                <button class="btn btn-secondary" onclick="celebrate()">
+                    🎉 Celebrar!
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                Sentiremos sua falta! <span class="heart-animation">💛</span>
+                <span class="heart-animation">💛</span>
+                <span class="heart-animation">💛</span>
+            </p>
+            <p style="margin-top: 10px; font-size: 12px;">
+                Feito com <span class="heart-animation">♥</span> por seus alunos de Desenvolvimento de Sistemas
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal com agradecimentos detalhados -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>💙 Agradecimentos da Turma</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+
+            <!-- Mensagens criativas dos alunos -->
+            <div class="creative-messages">
+                <div class="creative-message">
+                    "Nosso primeiro console.log foi com você. Desde então, cada linha de código carrega um pouco do seu ensino."
+                </div>
+                <div class="creative-message">
+                    "Foi um requisito funcional e não funcional ter você como professora. Obrigada por implementar excelência em nossas vidas."
+                </div>
+                <div class="creative-message">
+                    "Você modelou nossos sonhos em UML e transformou ideias abstratas em código real."
+                </div>
+                <div class="creative-message">
+                    "Banco de Dados MySQL nunca será o mesmo sem suas aulas. Você nos mostrou que dados também têm coração."
+                </div>
+                <div class="creative-message">
+                    "Engenharia de Software com você foi pura inspiração. Você nos ensinou que código bonito é código que resolve problemas com carinho."
+                </div>
+            </div>
+
+            <!-- Terminal com mensagem de despedida -->
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                    </div>
+                    <div class="terminal-title">alunos@turma-3DS:~$</div>
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alunos@turma-3DS:~$</span>
+                    <span class="terminal-text"> echo "Karol, sua dedicação nos inspirou além dos sistemas."</span>
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alunos@turma-3DS:~$</span>
+                    <span class="terminal-text"> echo "Você nos ensinou lógica, mas também valores."</span>
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alunos@turma-3DS:~$</span>
+                    <span class="terminal-text"> echo "Sentiremos saudades, mas levaremos seu legado."</span>
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alunos@turma-3DS:~$</span>
+                    <span class="terminal-text"> echo "Seu código vai viver em cada projeto nosso."</span>
+                </div>
+
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alunos@turma-3DS:~$</span>
+                    <span class="terminal-text"> echo "Obrigada por tudo <span class="heart">💛</span>"</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensagem de celebração -->
+    <div id="celebrationMessage" class="celebration-message">
+        🎉 Hoje celebramos você, Karol! Obrigada por tudo 💛
+    </div>
+
+    <script>
+        // Efeito de digitação da mensagem principal
+        const fullMessage = "Obrigada, Karol 💛 — sua dedicação e carinho sempre estarão com a gente!";
+        const mainText = document.getElementById("mainText");
+        let charIndex = 0;
+
+        function typeMessage() {
+            if (charIndex < fullMessage.length) {
+                mainText.textContent += fullMessage.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeMessage, 40);
+            }
+        }
+
+        // Inicia a animação ao carregar
+        window.addEventListener("load", typeMessage);
+
+        // Funções do Modal
+        function openModal() {
+            document.getElementById("modal").classList.add("show");
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === "modal") {
+                document.getElementById("modal").classList.remove("show");
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Função para celebrar
+        function celebrate() {
+            const celebMsg = document.getElementById("celebrationMessage");
+            celebMsg.classList.add("show");
+
+            // Confete amarelo e branco
+            createConfetti();
+
+            setTimeout(() => {
+                celebMsg.classList.remove("show");
+            }, 3500);
+        }
+
+        // Criar confete animado
+        function createConfetti() {
+            const colors = ['#ffc000', '#ffb000', '#ffd700', '#ffffff'];
+            
+            for (let i = 0; i < 80; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.style.position = 'fixed';
+                confettiPiece.style.width = (Math.random() * 10 + 8) + 'px';
+                confettiPiece.style.height = confettiPiece.style.width;
+                confettiPiece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confettiPiece.style.left = Math.random() * window.innerWidth + 'px';
+                confettiPiece.style.top = '-10px';
+                confettiPiece.style.pointerEvents = 'none';
+                confettiPiece.style.zIndex = '2000';
+                confettiPiece.style.borderRadius = '50%';
+                confettiPiece.style.opacity = '0.9';
+                confettiPiece.style.boxShadow = '0 0 10px rgba(255, 192, 0, 0.6)';
+                
+                const duration = 2.5 + Math.random() * 1.5;
+                const angle = (Math.random() - 0.5) * 180;
+                
+                confettiPiece.style.animation = `fall ${duration}s linear`;
+                confettiPiece.style.setProperty('--angle', angle + 'deg');
+                
+                document.body.appendChild(confettiPiece);
+
+                setTimeout(() => {
+                    confettiPiece.remove();
+                }, duration * 1000);
+            }
+        }
+
+        // Adicionar estilo para animação de queda
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(${window.innerHeight + 100}px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Efeito hover nas tags HTML
+        document.querySelectorAll('.html-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                this.style.transform = 'scale(1.15)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
